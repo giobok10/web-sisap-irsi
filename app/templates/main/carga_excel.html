@@ -1,0 +1,17 @@
+<!-- app/templates/main/carga_excel.html -->
+{% extends "base.html" %}
+{% block title %}Cargar Excel{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Cargar Archivo Excel</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}  <!-- Token CSRF obligatorio -->
+        <div class="mb-3">
+            <label for="file" class="form-label">Selecciona un archivo .xlsx</label>
+            <input type="file" class="form-control" id="file" name="file" accept=".xlsx">
+        </div>
+        <button type="submit" class="btn btn-success">Cargar</button>
+    </form>
+</div>
+{% endblock %}

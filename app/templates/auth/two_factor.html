@@ -1,0 +1,21 @@
+<!-- app/templates/auth/two_factor.html -->
+{% extends "base.html" %}
+{% block title %}Verificación 2FA{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2>Verificación de Dos Factores (2FA)</h2>
+    <form method="POST">
+        {{ form.csrf_token }}
+        <div class="mb-3">
+            {{ form.code.label(class="form-label") }}
+            {{ form.code(class="form-control", maxlength=6) }}
+            {% if form.code.errors %}
+                {% for error in form.code.errors %}
+                    <div class="text-danger">{{ error }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <button type="submit" class="btn btn-success">Verificar</button>
+    </form>
+</div>
+{% endblock %}

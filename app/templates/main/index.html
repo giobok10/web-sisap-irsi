@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Panel Principal{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Bienvenido, {{ current_user.username }}!</h2>
+    <p>Seleccione una opción del menú para continuar.</p>
+</div>
+{% endblock %}

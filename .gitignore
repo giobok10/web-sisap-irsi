@@ -1,0 +1,25 @@
+# Ignorar archivos y carpetas generados por Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Ignorar archivos y carpetas generados por el entorno virtual
+venv/
+env/
+
+# Ignorar archivos de configuración de desarrollo
+.env
+.flaskenv
+
+# Ignorar archivos de logs
+*.log
+
+# Ignorar archivos de compilación y distribución
+build/
+dist/
+*.egg-info/
+
+# Ignorar el archivo específico
+hashear_password.py
