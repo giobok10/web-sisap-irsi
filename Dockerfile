@@ -8,11 +8,12 @@ RUN apt-get update && apt-get install -y \
     unixodbc-dev \
     && apt-get clean
 
-# Descargar e instalar el controlador ODBC para SQL Server
+# Instalar el controlador ODBC para SQL Server
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     curl https://packages.microsoft.com/config/ubuntu/22.04/prod.list | tee /etc/apt/sources.list.d/mssql-release.list && \
     apt-get update && \
     ACCEPT_EULA=Y apt-get install -y msodbcsql18 && \
+    apt-get install -y unixodbc-dev && \
     apt-get clean
 
 # Configurar la aplicación
